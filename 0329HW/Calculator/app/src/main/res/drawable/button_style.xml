@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 按钮被按下时的样式 -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#FF6E40"/> <!-- 按下时的填充色 -->
+            <corners android:radius="20dp"/> <!-- 圆角边缘 -->
+            <stroke android:width="2dp" android:color="#FFFFFF"/> <!-- 边框 -->
+        </shape>
+    </item>
+
+    <!-- 按钮默认状态的样式 -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#7B1FA2"
+            android:endColor="#E1BEE7"
+            android:angle="45"/> <!-- 渐变角度 -->
+            <corners android:radius="20dp"/> <!-- 圆角边缘 -->
+            <stroke android:width="2dp" android:color="#FFFFFF"/> <!-- 边框 -->
+            <padding
+                android:left="10dp"
+                android:top="10dp"
+                android:right="10dp"
+                android:bottom="10dp"/> <!-- 内边距 -->
+        </shape>
+    </item>
+</selector>
