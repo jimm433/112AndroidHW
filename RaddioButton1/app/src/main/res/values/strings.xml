@@ -5,4 +5,5 @@
     <string name="regularticket">全票</string>
     <string name="childticket">兒童票</string>
     <string name="studentticket">學生票</string>
+    <string name="ticket">購買張數</string>
 </resources>
