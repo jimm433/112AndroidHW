@@ -109,11 +109,11 @@ public class MainActivity extends AppCompatActivity {
         if (checkedId == R.id.rdbAdult) {
             price = 500;
             ticketType = getResources().getString(R.string.regularticket);
-        } else if (checkedId == R.id.rdbChild) {
-            price = 400;
-            ticketType = getResources().getString(R.string.childticket);
         } else if (checkedId == R.id.rdbStudent) {
             price = 250;
+            ticketType = getResources().getString(R.string.childticket);
+        } else if (checkedId == R.id.rdbChild) {
+            price = 400;
             ticketType = getResources().getString(R.string.studentticket);
         }
 

@@ -73,13 +73,13 @@
             android:id="@+id/rdbChild"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/childticket" />
+            android:text="@string/studentticket" />
 
         <RadioButton
             android:id="@+id/rdbStudent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/studentticket" />
+            android:text="@string/childticket" />2
     </RadioGroup>
 
     <Button
