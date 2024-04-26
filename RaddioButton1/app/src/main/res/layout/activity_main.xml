@@ -65,6 +65,8 @@
             android:id="@+id/rdbAdult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:checked="false"
+            android:clickable="true"
             android:text="@string/regularticket" />
 
         <RadioButton
@@ -81,34 +83,24 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/Btn_addshopcar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="144dp"
-        android:text="加入購物車"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/Btn_shopcar"
+        android:id="@+id/Btn_OK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:layout_marginBottom="144dp"
-        android:text="查看購物車"
+        android:layout_marginBottom="104dp"
+        android:text="確認"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Btn_addshopcar" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/lblOutput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="56dp"
-        android:text="TextView"
+        android:text="購買提示"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/Tickets" />
 
     <TextView
         android:id="@+id/textView3"
@@ -151,14 +143,17 @@
         android:id="@+id/Tickets"
         android:layout_width="194dp"
         android:layout_height="50dp"
+        android:layout_marginTop="22dp"
         android:layout_marginEnd="96dp"
-        android:layout_marginBottom="404dp"
+        android:layout_marginBottom="408dp"
         android:ems="10"
         android:hint="@string/ticket"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.033"
-        app:layout_constraintStart_toEndOf="@+id/textView6" />
+        app:layout_constraintHorizontal_bias="0.617"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/rgType"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

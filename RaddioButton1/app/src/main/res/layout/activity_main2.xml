@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="48dp"
-        android:text="購物車 :"
+        android:text="購買 :"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,33 +28,14 @@
         app:layout_constraintTop_toBottomOf="@+id/shoppingcar" />
 
     <Button
-        android:id="@+id/buybtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="544dp"
-        android:text="確認購買"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/backtoshopbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:text="返回商店"
+        android:text="返回"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/clearcarbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="544dp"
-        android:layout_marginEnd="72dp"
-        android:text="清空購物車"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
