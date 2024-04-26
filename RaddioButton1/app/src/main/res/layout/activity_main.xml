@@ -79,7 +79,7 @@
             android:id="@+id/rdbStudent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/childticket" />2
+            android:text="@string/childticket" />
     </RadioGroup>
 
     <Button
