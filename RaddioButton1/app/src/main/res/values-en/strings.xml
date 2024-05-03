@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">raddioButton1</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="regularticket">Regular Ticket</string>
+    <string name="childticket">Children Ticket</string>
+    <string name="studentticket">Student Ticket</string>
+    <string name="ticket">Number of Tickets</string>
+    <string name="confirm">confirm</string>
+    <string name="bought">bought</string>
+    <string name="back">back</string>
+</resources>
