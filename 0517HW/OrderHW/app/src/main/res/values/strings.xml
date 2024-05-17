@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">OrderHW</string>
+
+    <string-array name="meal_types">
+        <item>主餐</item>  <!-- Main dish -->
+        <item>附餐</item>  <!-- Side dish -->
+        <item>飲料</item>  <!-- Drink -->
+    </string-array>
+
+    <string-array name="main_dish_options">
+        <item>豬肉漢堡</item>  <!-- Pork Burger -->
+        <item>牛肉漢堡</item>  <!-- Beef Burger -->
+    </string-array>
+
+    <string-array name="side_dish_options">
+        <item>沙拉</item>  <!-- Salad -->
+        <item>薯條</item>  <!-- Fries -->
+    </string-array>
+
+    <string-array name="drink_options">
+        <item>可樂</item>  <!-- Cola -->
+        <item>雪碧</item>  <!-- Sprite -->
+    </string-array>
+</resources>
