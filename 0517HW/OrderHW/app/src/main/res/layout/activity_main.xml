@@ -9,11 +9,11 @@
     <Spinner
         android:id="@+id/spinner_meal_type"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="65dp"
         android:entries="@array/meal_types" />
 
     <!-- Container for dynamically generated buttons based on meal type selection -->
-    <LinearLayout
+    W<LinearLayout
         android:id="@+id/button_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,9 +28,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:background="@android:color/holo_blue_light"
-        android:text="主餐: \n附餐: \n飲料: " />
+        android:text="主餐: \n附餐: \n飲料: "
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
 
 

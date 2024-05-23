@@ -2,7 +2,11 @@ package com.example.orderhw;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -10,12 +14,16 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private Spinner spinnerMealType;
     private LinearLayout buttonContainer;
     private TextView selected_item;
+    private String mainDish = "請選擇";
+    private String sideDish = "請選擇";
+    private String drink = "請選擇";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +52,44 @@ public class MainActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+
+        // Update the displayed text
+        updateSelectedItemText();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        int id = item.getItemId();
+        if (id == R.id.send) {
+            // Handle send action
+            if (mainDish.equals("請選擇") || sideDish.equals("請選擇") || drink.equals("請選擇")) {
+                Toast.makeText(this, "請確保所有選項都已選擇", Toast.LENGTH_SHORT).show();
+            } else {
+                String orderDetails = "主餐: " + mainDish + "\n附餐: " + sideDish + "\n飲料: " + drink;
+                Intent intent = new Intent(MainActivity.this, OrderSummaryActivity.class);
+                intent.putExtra("ORDER_DETAILS", orderDetails);
+                startActivity(intent);
+            }
+            return true;
+        } else if (id == R.id.cancel) {
+            // Handle cancel action
+            mainDish = "請選擇";
+            sideDish = "請選擇";
+            drink = "請選擇";
+            updateSelectedItemText();
+            Toast.makeText(this, "已取消選擇", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
     }
 
     private void updateButtons(int mealType) {
@@ -72,8 +118,25 @@ public class MainActivity extends AppCompatActivity {
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT
             ));
-            button.setOnClickListener(v -> selected_item.setText("Selected: " + item));
+            button.setOnClickListener(v -> {
+                switch (mealType) {
+                    case 0:
+                        mainDish = item;
+                        break;
+                    case 1:
+                        sideDish = item;
+                        break;
+                    case 2:
+                        drink = item;
+                        break;
+                }
+                updateSelectedItemText();
+            });
             buttonContainer.addView(button);
         }
+    }
+
+    private void updateSelectedItemText() {
+        selected_item.setText("主餐: " + mainDish + "\n附餐: " + sideDish + "\n飲料: " + drink);
     }
 }

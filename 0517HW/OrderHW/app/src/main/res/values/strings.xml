@@ -10,15 +10,21 @@
     <string-array name="main_dish_options">
         <item>豬肉漢堡</item>  <!-- Pork Burger -->
         <item>牛肉漢堡</item>  <!-- Beef Burger -->
+        <item>炸雞漢堡</item>  <!-- Chicken Burger -->
+        <item>炸魚漢堡</item>  <!-- fish Burger -->
     </string-array>
 
     <string-array name="side_dish_options">
         <item>沙拉</item>  <!-- Salad -->
         <item>薯條</item>  <!-- Fries -->
+        <item>玉米濃湯</item>  <!-- Corn Soup -->
+        <item>蘋果派</item>  <!-- Apple Pie -->
     </string-array>
 
     <string-array name="drink_options">
         <item>可樂</item>  <!-- Cola -->
         <item>雪碧</item>  <!-- Sprite -->
+        <item>綠茶</item>  <!-- Green Tea -->
+        <item>紅茶</item>  <!-- Black Tea -->
     </string-array>
 </resources>
