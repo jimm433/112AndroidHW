@@ -10,8 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,7 +18,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private Spinner spinnerMealType;
-    private LinearLayout buttonContainer;
+    private ListView itemListView;
     private TextView selected_item;
     private String mainDish = "請選擇";
     private String sideDish = "請選擇";
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Initialize views
         spinnerMealType = findViewById(R.id.spinner_meal_type);
-        buttonContainer = findViewById(R.id.button_container);
+        itemListView = findViewById(R.id.item_list_view);
         selected_item = findViewById(R.id.selected_item);
 
         // Setup Spinner Adapter
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         spinnerMealType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                updateButtons(position);
+                updateListView(position);
             }
 
             @Override
@@ -92,9 +91,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void updateButtons(int mealType) {
-        buttonContainer.removeAllViews();  // Clear previous buttons
-
+    private void updateListView(int mealType) {
         int arrayId;
         switch (mealType) {
             case 0:
@@ -111,29 +108,25 @@ public class MainActivity extends AppCompatActivity {
         }
 
         String[] items = getResources().getStringArray(arrayId);
-        for (String item : items) {
-            Button button = new Button(this);
-            button.setText(item);
-            button.setLayoutParams(new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-            ));
-            button.setOnClickListener(v -> {
-                switch (mealType) {
-                    case 0:
-                        mainDish = item;
-                        break;
-                    case 1:
-                        sideDish = item;
-                        break;
-                    case 2:
-                        drink = item;
-                        break;
-                }
-                updateSelectedItemText();
-            });
-            buttonContainer.addView(button);
-        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1, items);
+        itemListView.setAdapter(adapter);
+
+        itemListView.setOnItemClickListener((parent, view, position, id) -> {
+            String item = items[position];
+            switch (mealType) {
+                case 0:
+                    mainDish = item;
+                    break;
+                case 1:
+                    sideDish = item;
+                    break;
+                case 2:
+                    drink = item;
+                    break;
+            }
+            updateSelectedItemText();
+        });
     }
 
     private void updateSelectedItemText() {

@@ -13,14 +13,12 @@
         android:entries="@array/meal_types" />
 
     <!-- Container for dynamically generated buttons based on meal type selection -->
-    W<LinearLayout
-        android:id="@+id/button_container"
+    <ListView
+        android:id="@+id/item_list_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:paddingTop="16dp">
-        <!-- Buttons will be added here programmatically -->
-    </LinearLayout>
+    </ListView>
 
     <!-- Display Selected Item -->
     <TextView
@@ -30,7 +28,5 @@
         android:padding="16dp"
         android:text="主餐: \n附餐: \n飲料: "
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-
 
 </LinearLayout>
