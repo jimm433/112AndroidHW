@@ -58,23 +58,10 @@ public class MainActivity extends AppCompatActivity {
             case "7":
             case "8":
             case "9":
-                if (decimalClicked) {
-                    String currentText = edt.getText().toString();
-                    // 检查当前文本中小数点后数字的位数
-                    if (currentText.contains(".")) {
-                        String[] parts = currentText.split("\\.");
-                        // 检查小数部分的位数是否超过两位
-                        if (parts.length > 1 && parts[1].length() >= 2) {
-                            return;
-                        }
-                    }
-                    edt.setText(currentText + bstr);
+                if (decimalClicked || !edt.getText().toString().equals("0")) {
+                    edt.setText(edt.getText().toString() + bstr);
                 } else {
-                    if (theValue == 0) {
-                        edt.setText(bstr);
-                    } else {
-                        edt.setText(edt.getText().toString() + bstr);
-                    }
+                    edt.setText(bstr);
                 }
 
                 theValue = Double.parseDouble(edt.getText().toString());
@@ -138,8 +125,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-
-
 
     private OP getOperatorFromButton(String buttonText) {
         switch (buttonText) {

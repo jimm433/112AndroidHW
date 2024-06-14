@@ -37,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     float height = Float.parseFloat(heightStr) / 100;
                     float weight = Float.parseFloat(weightStr);
+
+                    // 檢查體重是否為0
+                    if (weight == 0) {
+                        txvShow.setText("請輸入正確的體重"); // 提示輸入正確數字
+                        txvShow.setTextColor(Color.BLACK); // 使用黑色顯示提示信息
+                        return; // 退出此方法
+                    }
+
                     float bmi = weight / (height * height);
 
                     String resultText = "BMI: " + String.format("%.2f", bmi);
